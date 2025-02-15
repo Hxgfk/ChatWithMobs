@@ -20,8 +20,8 @@ public class ModelAPI {
         JsonArray messages = new JsonArray();
         for (MessageEntry entry : all) {
             JsonObject msgObj = new JsonObject();
-            msgObj.addProperty("role", entry.getType().type());
-            msgObj.addProperty("content", entry.getContent());
+            msgObj.addProperty("role", entry.type().type());
+            msgObj.addProperty("content", entry.content());
             messages.add(msgObj);
         }
         base.add("messages", messages);

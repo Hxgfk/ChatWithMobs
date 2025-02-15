@@ -2,23 +2,7 @@ package com.hxgfk.cwm.util;
 
 import net.minecraft.nbt.CompoundTag;
 
-public class MessageEntry {
-    private MessageType type;
-    private String content;
-
-    public MessageEntry(MessageType type, String content) {
-        this.content = content;
-        this.type = type;
-    }
-
-    public MessageType getType() {
-        return type;
-    }
-
-    public String getContent() {
-        return this.content;
-    }
-
+public record MessageEntry(MessageType type, String content) {
     public CompoundTag toNbt() {
         CompoundTag t = new CompoundTag();
         t.putString("content", content);

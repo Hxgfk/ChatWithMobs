@@ -18,10 +18,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class VillagerPrompt implements PromptCreator<Villager> {
-    @Override
-    public boolean canChat(Villager entity) {
-        return !entity.isTrading();
-    }
 
     public static String toTradings(Villager villager) {
         List<String> offerStrings = new ArrayList<>();

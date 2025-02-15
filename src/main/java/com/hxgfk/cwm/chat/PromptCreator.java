@@ -7,10 +7,6 @@ import net.minecraft.world.entity.player.Player;
 import java.util.LinkedList;
 
 public interface PromptCreator <T extends LivingEntity> {
-    default boolean canChat(T entity) {
-        return true;
-    }
-
     LinkedList<MessageEntry> createPrompts(T entity, Player player);
     LinkedList<MessageEntry> createUpdatePrompts(T entity, Player player);
 }

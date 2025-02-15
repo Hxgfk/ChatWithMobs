@@ -5,7 +5,6 @@ import com.hxgfk.cwm.main.Config;
 import com.hxgfk.cwm.network.MessagePacket;
 import com.hxgfk.cwm.network.ModDispatcher;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Widget;
 import net.minecraft.client.gui.screens.ChatScreen;
@@ -35,7 +34,7 @@ public class SendMessage extends ChatScreen {
 
     public void send() {
         ModDispatcher.INSTANCE.sendToServer(new MessagePacket(owner.getLevel().dimension(), input.getValue(), owner.getId()));
-        Minecraft.getInstance().setScreen(null);
+        this.minecraft.setScreen(null);
     }
 
     @Override

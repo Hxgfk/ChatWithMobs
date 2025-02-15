@@ -1,6 +1,5 @@
 package com.hxgfk.cwm.chat.vanilla;
 
-import com.hxgfk.cwm.chat.IMobChat;
 import com.hxgfk.cwm.chat.PromptCreator;
 import com.hxgfk.cwm.chat.PromptManager;
 import com.hxgfk.cwm.util.MessageEntry;
@@ -54,8 +53,7 @@ public class DefaultPrompt implements PromptCreator {
     @Override
     public LinkedList<MessageEntry> createUpdatePrompts(LivingEntity entity, Player player) {
         LinkedList<MessageEntry> prompts = new LinkedList<>();
-        String entityName = entity.getType().getDescription().getString();
-        String theName = entityName;
+        String theName = entity.getType().getDescription().getString();
         if (entity.hasCustomName()) {
             theName = entity.getCustomName().getString();
         }
