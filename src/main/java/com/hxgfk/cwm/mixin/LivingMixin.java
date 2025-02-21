@@ -81,13 +81,13 @@ public abstract class LivingMixin implements IMobChat {
         ServerLevel sl = ((LivingEntity)(Object)this).getServer().getLevel(((LivingEntity)(Object)this).getLevel().dimension());
         try {
             Method method = Brain.class.getMethod("stopAll", ServerLevel.class, LivingEntity.class);
-            method.invoke(this, sl, this);
+            method.invoke(this.getBrain(), sl, this);
         } catch (Exception e) {
             CWM.LOGGER.error(e);
         }
     }
 
-    private static final float MAX_TEMPERATURE = 2.0f;
+    private static final float MAX_TEMPERATURE = 1.75f;
     private static final float MIN_TEMPERATURE = 0.0f;
 
     @Override

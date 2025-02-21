@@ -16,7 +16,6 @@
   "prompt.weather.rain": "Raining",
   "prompt.weather.snow": "Snowing",
   "prompt.weather.thundering": "Raining and thundering.",
-  "prompt.entity.withName": "The %s named %s.",
   "prompt.end": ".",
   "prompt.continue": ",",
   "prompt.yes": "yes",

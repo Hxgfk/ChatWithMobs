@@ -76,4 +76,9 @@ public class PromptManager {
             return item.getItem().getDescription().getString();
         }
     }
+
+    public static String entity(LivingEntity entity) {
+        if (!entity.hasCustomName()) return entity.getType().getDescription().getString();
+        return I18n.get("prompt.name", entity.getDisplayName().getString(), entity.getType().getDescription().getString());
+    }
 }

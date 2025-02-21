@@ -16,7 +16,6 @@
   "prompt.weather.rain": "下雨",
   "prompt.weather.snow": "下雪",
   "prompt.weather.thundering": "下雨并且在打雷",
-  "prompt.entity.withName": "名叫%s的%s",
   "prompt.end": "。",
   "prompt.continue": "，",
   "prompt.yes": "是",

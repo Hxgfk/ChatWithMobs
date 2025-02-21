@@ -17,17 +17,13 @@ public class DefaultPrompt implements PromptCreator {
     public LinkedList<MessageEntry> createPrompts(LivingEntity entity, Player player) {
         LinkedList<MessageEntry> prompts = new LinkedList<>();
         BlockPos pos = entity.blockPosition();
-        String entityName = entity.getType().getDescription().getString();
-        String theName = entityName;
-        if (entity.hasCustomName()) {
-            theName = I18n.get("prompt.entity.withName", entity.getCustomName().getString(), entityName);
-        }
+        String entityName = PromptManager.entity(entity);
         long[] time = PromptManager.time(entity.getLevel());
         ItemStack item = player.getMainHandItem();
         if (!item.isEmpty()) {
             prompts.add(new MessageEntry(MessageType.SYSTEM, I18n.get(
                     "prompt.default",
-                    theName,
+                    entityName,
                     player.getName().getString(),
                     player.getName().getString(),
                     player.getMainHandItem().getItem().getDescription().getString(),
@@ -39,7 +35,7 @@ public class DefaultPrompt implements PromptCreator {
         } else {
             prompts.add(new MessageEntry(MessageType.SYSTEM, I18n.get(
                     "prompt.default.noItem",
-                    theName,
+                    entityName,
                     player.getName().getString(),
                     PromptManager.toWeather(entity),
                     pos.getX(), pos.getY(), pos.getZ(),
@@ -53,10 +49,7 @@ public class DefaultPrompt implements PromptCreator {
     @Override
     public LinkedList<MessageEntry> createUpdatePrompts(LivingEntity entity, Player player) {
         LinkedList<MessageEntry> prompts = new LinkedList<>();
-        String theName = entity.getType().getDescription().getString();
-        if (entity.hasCustomName()) {
-            theName = entity.getCustomName().getString();
-        }
+        String theName = PromptManager.entity(entity);
         BlockPos pos = entity.blockPosition();
         long[] time = PromptManager.time(entity.getLevel());
         ItemStack item = player.getMainHandItem();
